@@ -15,7 +15,7 @@
   "format": "es6",
   "jspm": {
     "dependencies": {
-      "panda-session": "^0.1.1",
+      "panda-session": "npm:panda-session@^0.1.1",
       "angular": "^1.2.16"
     }
   }
