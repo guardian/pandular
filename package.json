@@ -12,8 +12,9 @@
   "main": "src/heal.js",
   "author": "Sébastien Cevey <seb.cevey@guardian.co.uk>",
   "license": "Apache-2",
-  "format": "es6",
   "jspm": {
+    "registry": "jspm",
+    "format": "es6",
     "dependencies": {
       "panda-session": "npm:panda-session@^0.1.1",
       "angular": "^1.2.16"
