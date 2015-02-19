@@ -1,6 +1,6 @@
 {
   "name": "pandular",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Angular module to re-establish a pan-domain auth (aka panda) session",
   "keywords": [
     "panda",
