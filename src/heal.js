@@ -13,16 +13,18 @@ heal.config(['$provide', function ($provide) {
             return func().catch(error => {
                 // Check whether session has expired
                 if (error && error.status === 419) {
-                    $log.info('Invalid session, attempting to re-establish');
+                  $log.info('Invalid session, attempting to re-establish');
 
                   // Attempt to re-establish the session once before
                   return reEstablishSession().then(data => {
                         $log.info('Session re-established');
+                        $rootScope.$emit('pandular:re-establishment:success', data);
 
                         // Try again now we have a fresh session
                         return func();
                     }, sessionError => {
                         $log.error('Could not re-establish session: ' + sessionError);
+                        $rootScope.$emit('pandular:re-establishment:fail', sessionError);
 
                         // Note: we forward the *original* error we
                         // got from the server
