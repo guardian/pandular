@@ -6,8 +6,10 @@ export var heal = angular.module('pandular.heal', ['pandular.session']);
 
 heal.config(['$provide', function ($provide) {
 
-    $provide.decorator('$http', ['$delegate', '$log', 'pandular.reEstablishSession', 'httpPromise',
-                                 function ($http, $log, reEstablishSession, httpPromise) {
+    $provide.decorator('$http', ['$rootScope', '$delegate', '$log',
+                                 'pandular.reEstablishSession', 'httpPromise',
+                                 ($rootScope, $http, $log,
+                                  reEstablishSession, httpPromise) => {
 
         function withRetry(func) {
             return func().catch(error => {
