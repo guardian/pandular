@@ -14,10 +14,9 @@ export var session = angular.module('pandular.session', []);
 session.factory('pandular.reAuthUri', () => { throw new RequiredConfiguration('pandular.reAuthUri'); });
 
 /**
- * The number of milliseconds to wait for the session to re-establish
- * before giving up.
+ * The time to wait before giving up on re-auth 
  */
-session.constant('pandular.reAuthTimeout', 5000 /* ms */);
+session.factory('pandular.reAuthTimeout', () => { throw new RequiredConfiguration('pandular.reAuthTimeout'); });
 
 
 session.factory('pandular.reEstablishSession',
